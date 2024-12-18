@@ -17,6 +17,8 @@ const WeatherApp = () => {
             
             if (response.ok) {
                 const data = await response.json();
+                setWeather(data);
+                setError('');
             }
             else {
                 setError('Місто не знайдено');
@@ -52,7 +54,7 @@ return (
                     style={styles.icon}
                 />
                 <Text style={styles.info}>Вологість: {weather.main.humidity} %</Text>
-                <Txet style={styles.info}>Швидкість вітру: {weather.wind.speed} м/с.</Txet>
+                <Text style={styles.info}>Швидкість вітру: {weather.wind.speed} м/с.</Text>
             </View>
         )}
     </View>
@@ -118,4 +120,4 @@ const styles = StyleSheet.create (
     }
 );
 
-export default WeatherApp;
+export default WeatherApp;  
